@@ -1,0 +1,24 @@
+.world-loader{
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #61dafbaa;
+    flex-direction: column;
+}
+
+.word-button{
+    background-color: rgb(104, 104, 223);
+    width: 100%;
+}
+
+.word-button:hover{
+    background-color: rgb(69, 69, 209);
+}
+
+.word-input{
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
