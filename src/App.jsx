@@ -12,7 +12,7 @@ function createInputs(word) {
   let letters = []
   for (let i = 0; i < parseInt(word); i++) {
     letters.push(
-      <InputLetters key={i}></InputLetters>
+      <InputLetters key={i}>{i}</InputLetters>
     )
   }
   return letters
@@ -20,7 +20,6 @@ function createInputs(word) {
 }
 
 export default function App() {
-  console.log('rendering App')
 
   const [word, setWord] = React.useState('')
 
