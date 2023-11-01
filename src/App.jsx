@@ -3,6 +3,7 @@
 import './App.css'
 import React from 'react'
 import WordLoader from './components/WordLoader'
+import InputLetters from './components/InputLetters'
 
 const AppContext = React.createContext()
 
@@ -11,7 +12,7 @@ function createInputs(word) {
   let letters = []
   for (let i = 0; i < parseInt(word); i++) {
     letters.push(
-      <input key={i} placeholder='_' className="letter-input" />
+      <InputLetters key={i}></InputLetters>
     )
   }
   return letters

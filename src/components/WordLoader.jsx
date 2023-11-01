@@ -23,7 +23,7 @@ export default function WordLoader() {
     return (
         <div className='word-loader'>
             <form onSubmit={handleSubmit}>
-                <input className="word-input" type="text" placeholder="Ingresa un numero" name="word-lenght" />
+                <input className="word-input" type="text" placeholder="Ingresa el largo de la palabra" name="word-lenght" />
                 <button className="word-button" type="submit">Buscar Palabra</button>
             </form>
         </div >
