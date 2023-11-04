@@ -3,6 +3,7 @@
 import './App.css'
 import React from 'react'
 import WordLoader from './components/WordLoader'
+import InputLetters from './components/InputLetters'
 
 const AppContext = React.createContext()
 
@@ -11,7 +12,7 @@ function createInputs(word) {
   let letters = []
   for (let i = 0; i < parseInt(word); i++) {
     letters.push(
-      <input key={i} placeholder='_' className="letter-input" />
+      <InputLetters key={i}>{i}</InputLetters>
     )
   }
   return letters
@@ -19,16 +20,16 @@ function createInputs(word) {
 }
 
 export default function App() {
-  console.log('rendering App')
 
   const [word, setWord] = React.useState('')
+  const [beShowed, setBeShowed] = React.useState(true)
 
   const letters = createInputs(word)
 
   return (
-    <AppContext.Provider value={{ setWord }}>
+    <AppContext.Provider value={{ setWord, setBeShowed }}>
       <h1>Ahorcado</h1>
-      <WordLoader />
+      {beShowed && <WordLoader />}
       <div className="letters">
         {letters}
       </div>

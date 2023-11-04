@@ -23,14 +23,3 @@
     padding: 0.5em;
 }
 
-.letter-input{
-    border: none;
-    height: 30px;
-    width: 30px;
-    text-align: center;
-
-}
-
-::-webkit-input-placeholder {
-    text-align: center;
- }
