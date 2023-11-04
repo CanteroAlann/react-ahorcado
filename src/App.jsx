@@ -22,13 +22,14 @@ function createInputs(word) {
 export default function App() {
 
   const [word, setWord] = React.useState('')
+  const [beShowed, setBeShowed] = React.useState(true)
 
   const letters = createInputs(word)
 
   return (
-    <AppContext.Provider value={{ setWord }}>
+    <AppContext.Provider value={{ setWord, setBeShowed }}>
       <h1>Ahorcado</h1>
-      <WordLoader />
+      {beShowed && <WordLoader />}
       <div className="letters">
         {letters}
       </div>

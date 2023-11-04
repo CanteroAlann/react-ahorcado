@@ -6,7 +6,7 @@ import { AppContext } from '../App'
 export default function WordLoader() {
     console.log('rendering WordLoader')
 
-    const { setWord } = React.useContext(AppContext)
+    const { setWord, setBeShowed } = React.useContext(AppContext)
 
 
 
@@ -16,9 +16,11 @@ export default function WordLoader() {
         const form = e.target
         const word = new FormData(form).get('word-lenght')
         setWord(word)
-        form.reset()
+        setBeShowed(prevState => !prevState)
 
     }
+
+
 
     return (
         <div className='word-loader'>
