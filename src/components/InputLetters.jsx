@@ -1,10 +1,17 @@
 import React from "react"
 import './styles/InputLetter.css'
+import { AppContext } from '../App'
+
+//Este componente recibe un numero desde el componente WordLoader
+//y crea una cantidad de inputs igual a ese numero ademas compara los valores
+//
 
 export default function InputLetters({ children }) {
 
+    const { setIsEnd } = React.useContext(AppContext)
     const [isRight, setIsRight] = React.useState(false)
     const [value, setValue] = React.useState('')
+    const amount_errors = React.useRef(0)
 
     const number = parseInt(children)
     function compareInput(e) {
@@ -15,7 +22,13 @@ export default function InputLetters({ children }) {
             setValue(letter)
         }
         else {
-            console.log('incorrecto')
+            amount_errors.current++
+            if (amount_errors.current === 6) {
+                setIsEnd(prevState => !prevState)
+
+
+            }
+
         }
         e.target.value = ''
     }
