@@ -4,6 +4,8 @@ import './App.css'
 import React from 'react'
 import WordLoader from './components/WordLoader'
 import InputLetters from './components/InputLetters'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 
 const AppContext = React.createContext()
 
